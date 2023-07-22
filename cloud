@@ -1353,6 +1353,9 @@ function cloud_functions_env() {
     if [ -n "$extra_cc" ]; then
         env[KCIDB_EXTRA_CC]="$extra_cc"
     fi
+    if [ -n "$storage_bucket" ]; then
+        env[CACHE_BUCKET_NAME]="$storage_bucket"
+    fi
     if [ -n "$smtp_to_addrs" ]; then
         env[KCIDB_SMTP_TO_ADDRS]="$smtp_to_addrs"
     fi
